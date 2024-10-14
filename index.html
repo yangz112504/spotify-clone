@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Clone</title>
+    <script src="https://kit.fontawesome.com/6c7b50c5e1.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="home-container">
+        <div class="sidebar">
+            <div class="home-search-card">
+                <div class="icon-name-set hoverable">
+                    <i class="fa-solid fa-house"></i>
+                    <p>Home</p>
+                </div>
+                <div class="icon-name-set hoverable">
+                    <i class="fa-solid fa-search"></i>
+                    <p>Search</p>
+                </div>
+            </div>
+            <div class="library-playlists">
+                <div class="icon-name-set split-apart">
+                    <div class="library-icons hoverable" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Collapse Your Library">
+                        <i class="fa-solid fa-book"></i>
+                        <p> Your Library</p>
+                    </div>
+                    <div class="library-icons position-relative pe-2">
+                        <i class="fa-solid fa-plus hoverable" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Create playlist or folder"></i>
+                        <i class="fa-solid fa-arrow-right hoverable" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Show Folder"></i></i>
+                        <div>
+                            <i id="library-arrow" class="fa-solid fa-chevron-right gray-circle"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="library-sections-list">
+                    <div class="library-section">
+                        Playlists
+                    </div>
+                    <div class="library-section">
+                        Podcasts
+                    </div>
+                    <div class="library-section">
+                        Albums
+                    </div>
+                    <div class="library-section">
+                        Artists
+                    </div>
+                    <div class="library-section">
+                        Downloaded
+                    </div>
+                </div>
+                <div class="playlists">
+                    <div class="icon-name-set split-apart search-line">
+                        <i class="fas fa-search hoverable" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Search in Your Library"></i></i>
+                        <div class="dropdown">
+                            <button class="btn bigger-hoverable" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Recents
+                                <i style="margin-left:5px;" class="fa-solid fa-bars"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdowns">
+                                <small class="small-gray">Sort by</small>
+                                <li><a class="dropdown-item my-2 recents-active" href="#">Recents &#10003;</a></li>
+                                <li><a class="dropdown-item my-2 text-light" href="#">Recently added</a></li>
+                                <li><a class="dropdown-item my-2 text-light" href="#">Alphabetical</a></li>
+                                <li><a class="dropdown-item my-2 text-light" id="last-recents-item" href="#">Creator</a></li>
+                                <small class="small-gray">View as</small>
+                                <li class="d-flex align-items-baseline">
+                                    <i class="fa-solid fa-bars"></i>
+                                    <a class="dropdown-item my-2 text-light" href="#">Compact</a>
+                                </li>
+                                <li class="d-flex align-items-baseline">
+                                    <i class="fa-solid fa-bars recents-active"></i>
+                                    <a class="dropdown-item my-2 recents-active" href="#">List &#10003;</a>
+                                </li>
+                                <li class="d-flex align-items-baseline">
+                                    <i class="fa-solid fa-border-all"></i>
+                                    <a class="dropdown-item my-2 text-light" href="#">Grid</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="playlist-item">
+                        <img src="images/download.jpeg" alt="Playlist img">
+                        <div class="playlist-text">
+                            <p class="pl-title">Liked Songs</p>
+                            <p class="pl-description">Playlist·319 songs</p>
+                        </div>
+                    </div>
+                    <div class="playlist-item">
+                        <img src="images/tswfit.jpeg" alt="Playlist img">
+                        <div class="playlist-text">
+                            <p class="pl-title">White Girl Wednesday</p>
+                            <p class="pl-description">Playlist·Zai</p>
+                        </div>
+                    </div>
+                    <div class="playlist-item">
+                        <img src="images/21sav.jpeg" alt="Playlist img">
+                        <div class="playlist-text">
+                            <p class="pl-title">Bump</p>
+                            <p class="pl-description">Playlist·Zai</p>
+                        </div>
+                    </div>
+                    <div class="playlist-item">
+                        <img src="images/zachbryan.jpeg" alt="Playlist img">
+                        <div class="playlist-text">
+                            <p class="pl-title">Country Thursday</p>
+                            <p class="pl-description">Playlist·Zai</p>
+                        </div>
+                    </div>
+                    <div class="playlist-item">
+                        <img src="images/caamp.jpeg" alt="Playlist img">
+                        <div class="playlist-text">
+                            <p class="pl-title">Caamp Radio</p>
+                            <p class="pl-description">Playlist·Spotify</p>
+                        </div>
+                    </div>
+                    <div class="playlist-item">
+                        <img src="images/mozart.jpeg" alt="Playlist img">
+                        <div class="playlist-text">
+                            <p class="pl-title">Classical Mix</p>
+                            <p class="pl-description">Playlist·Spotify</p>
+                        </div>
+                    </div>
+                    <div class="playlist-item">
+                        <img src="images/dj.jpeg" alt="Playlist img">
+                        <div class="playlist-text">
+                            <p class="pl-title">DJ</p>
+                            <p class="pl-description">Click to Start Listening</p>
+                        </div>
+                    </div>
+                    <div class="playlist-item">
+                        <img src="images/time-capsule.jpeg" alt="Playlist img">
+                        <div class="playlist-text">
+                            <p class="pl-title">Your Time Capsule</p>
+                            <p class="pl-description">Playlist·Spotify</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="profile-line">
+                <div>
+                    <i class="fa-solid fa-chevron-left gray-circle" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Go Home"></i>></i>
+                    <i class="fa-solid fa-chevron-right gray-circle" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Go Forward"></i>
+                </div>
+                <div>
+                    <i class="fa-regular fa-bell gray-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="What's New"></i></i>
+                    <i class="fa-solid fa-people-group gray-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Friend Activity"></i></i>     
+                    <i class="fa-regular fa-user gray-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Zai"></i></i>                
+                </div>
+            </div>
+            <div class="nav-line" style="height: 8%; margin-bottom: 10px;">
+                <div class="library-section active">
+                    All
+                </div>
+                <div class="library-section">
+                    Music
+                </div>
+                <div class="library-section">
+                    Podcasts
+                </div>
+                <div class="library-section">
+                    Audiobooks
+                </div>
+            </div>
+            <div id="recently-played" class="container-fluid">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col playlist-item main-item">
+                        <img src="images/tswfit.jpeg" alt="Playlist img">
+                        <div class="play-button-recent">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                        <div class="playlist-text">
+                            <p class="pl-title">White Girl Wednesday</p>
+                        </div>
+                    </div>
+                    <div class="col playlist-item main-item">
+                        <img src="images/zachbryan.jpeg" alt="Playlist img">
+                        <div class="play-button-recent">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                        <div class="playlist-text">
+                            <p class="pl-title">Country Thursday</p>
+                        </div>
+                    </div>
+                    <div class="col playlist-item main-item">
+                        <img src="images/caamp.jpeg" alt="Playlist img">
+                        <div class="play-button-recent">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                        <div class="playlist-text">
+                            <p class="pl-title">Caamp Radio</p>
+                        </div>
+                    </div>
+                    <div class="col playlist-item main-item">
+                        <img src="images/usabarscene.jpeg" alt="Playlist img">
+                        <div class="play-button-recent">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                        <div class="playlist-text">
+                            <p class="pl-title">The Great American Bar Scene</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center align-items-center">
+                    <div class="col playlist-item main-item">
+                        <img src="images/mozart.jpeg" alt="Playlist img">
+                        <div class="play-button-recent">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                        <div class="playlist-text">
+                            <p class="pl-title">Classical Mix</p>
+                        </div>
+                    </div>
+                    <div class="col playlist-item main-item">
+                        <img src="images/both.png" alt="Playlist img">
+                        <div class="play-button-recent">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                        <div class="playlist-text">
+                            <p class="pl-title">Both(feat.Drake) Radio</p>
+                        </div>
+                    </div>
+                    <div class="col playlist-item main-item">
+                        <img src="images/bemylover.jpeg" alt="Playlist img">
+                        <div class="play-button-recent">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                        <div class="playlist-text">
+                            <p class="pl-title">Be My Lover(2023)</p>
+                        </div>
+                    </div>
+                    <div class="col playlist-item main-item">
+                        <img src="images/utopia.jpeg" alt="Playlist img">
+                        <div class="play-button-recent">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                        <div class="playlist-text">
+                            <p class="pl-title">Utopia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid music-rec-section">
+                <div class="row">
+                    <div class="col rec-header">
+                        <a class="rec-header-name" href="#">Made for Zai</a>
+                        <a href="#">Show all</a>
+                    </div>
+                </div>
+                <div class="row justify-content-center align-items-baseline rec-header">
+                    <div class="col col-music-rec">
+                        <div class="card rec-card">
+                            <img src="images/utopia.jpeg" class="card-img-top" alt="">
+                            <div class="play-button-section">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">Daily Mix 1</h4>
+                                <span class="card-text">Travis Scott, Kendrick Lamar, and more...</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-music-rec">
+                        <div class="card rec-card">
+                            <img src="images/tswfit.jpeg" class="card-img-top" alt="">
+                            <div class="play-button-section">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">Daily Mix 2</h4>
+                                <span class="card-text">Taylor Swift, Ed Sheeran, and more...</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-music-rec">
+                        <div class="card rec-card">
+                            <img src="images/mozart.jpeg" class="card-img-top" alt="">
+                            <div class="play-button-section">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">Daily Mix 3</h4>
+                                <span class="card-text">Mozart, Beethoven, Tchaikovsky</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-music-rec">
+                        <div class="card rec-card">
+                            <img src="images/usabarscene.jpeg" class="card-img-top" alt="">
+                            <div class="play-button-section">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">Daily Mix 4</h4>
+                                <span class="card-text">Zach Bryan, Luke Combs, Morgan Wallen</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-music-rec">
+                        <div class="card rec-card">
+                            <img src="images/both.png" class="card-img-top" alt="">
+                            <div class="play-button-section">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">Daily Mix 5</h4>
+                                <span class="card-text">Drake, Future, Lil Wayne, and...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid music-rec-section">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col rec-header">
+                        <a class="rec-header-name" href="#">Jump Back in</a>
+                        <a href="#">Show all</a>
+                    </div>
+                </div>
+                <div class="row justify-content-center align-items-baseline rec-header">
+                    <div class="col col-music-rec">
+                        <div class="card rec-card">
+                            <img src="images/dj.jpeg" class="card-img-top" alt="">
+                            <div class="play-button-section">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">DJ</h4>
+                                <span class="card-text">All kinds of music, picked by your own personalized DJ X</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-music-rec">
+                        <div class="card rec-card">
+                            <img src="images/beethoven.jpeg" class="card-img-top" alt="">
+                            <div class="play-button-section">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">Beethoven Radio</h4>
+                                <span class="card-text">Beethoven, Vivaldi, Chopin, and more</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-music-rec">
+                        <div class="card rec-card">
+                            <img src="images/glockinmylap.jpeg" class="card-img-top" alt="">
+                            <div class="play-button-section">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">Glock in My Lap</h4>
+                                <span class="card-text">21 Savage</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-music-rec">
+                        <div class="card rec-card">
+                            <img src="images/26caamp.jpeg" class="card-img-top" alt="">
+                            <div class="play-button-section">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">26</h4>
+                                <span class="card-text">Caamp</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-music-rec">
+                        <div class="card rec-card">
+                            <img src="images/bemylover.jpeg" class="card-img-top" alt="">
+                            <div class="play-button-section">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">Hype Edm Mix</h4>
+                                <span class="card-text">Alan Walker, David Guetta</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid music-rec-section">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col rec-header">
+                        <a class="rec-header-name" href="#">More like Caamp</a>
+                        <a href="#">Show all</a>
+                    </div>
+                </div>
+                <div class="row justify-content-center align-items-baseline rec-header">
+                    <div class="col col-music-rec">
+                        <div class="card rec-card">
+                            <img src="images/noahkahan.jpeg" class="card-img-top" alt="">
+                            <div class="play-button-section">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">Stick Season</h4>
+                                <span class="card-text">Noah Kahan</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-music-rec">
+                        <div class="card rec-card">
+                            <img src="images/bensonboone.jpeg" class="card-img-top" alt="">
+                            <div class="play-button-section">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">Beautiful Things</h4>
+                                <span class="card-text">Benson Boone</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-music-rec">
+                        <div class="card rec-card">
+                            <img src="images/mtjoy.jpeg" class="card-img-top" alt="">
+                            <div class="play-button-section">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">Silver Lining</h4>
+                                <span class="card-text">Mt. Joy</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-music-rec">
+                        <div class="card rec-card">
+                            <img src="images/lumineers.jpeg" class="card-img-top" alt="">
+                            <div class="play-button-section">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">Cleopatra</h4>
+                                <span class="card-text">The Lumineers</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-muisc-rec">
+                        <div class="card rec-card">
+                            <img src="images/ocieelliot.jpeg" class="card-img-top" alt="">
+                            <div class="play-button-section">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">Clear in the Eye</h4>
+                                <span class="card-text">Ocie Elliot</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+        const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+    </script>
+</body>
+</html>

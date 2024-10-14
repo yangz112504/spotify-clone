@@ -1,0 +1,356 @@
+/* Starting styles */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: #121212;
+}
+html, body{
+    box-sizing: border-box;
+}
+.home-container{
+    display: flex;
+    overflow: hidden;
+    justify-self: center;
+}
+
+/* Sidebar */
+.sidebar{
+    min-width: 20vw;
+    height: 100vh;
+    overflow: none;
+    display: flex;
+    flex-direction: column;
+    margin-right: 5px;
+    align-items: baseline;
+    padding: 0 5px;
+    margin-right: 5px;
+}
+.home-search-card{
+    width: 100%;
+    height: 20%;
+    background-color: #212121;
+    border-radius: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-self: center;
+}
+.btn{
+    color: rgb(211, 211, 211);
+}
+#last-recents-item{
+    padding-bottom: 10px;
+    border-bottom: 1px solid gray;
+}
+.recents-active{
+    color:rgb(11, 193, 11);
+}
+.recents-active:hover{
+    color:rgb(11, 193, 11);
+    background-color: rgba(179, 179, 179, 0.2);
+}
+.search-line{
+    font-size: 1.1rem;
+}
+
+.small-gray{
+    position: relative;
+    font-size: 0.8rem;
+    padding: 10%;
+}
+
+/* Music Rec */
+.col-music-rec{
+    position: relative;
+}
+.col:hover .play-button-section {
+    display: block; /* Show .play-button on hover */
+}
+.col-music-rec{
+    padding: 13px;
+}
+.col-music-rec:hover{
+    cursor: pointer;
+    background-color:  rgba(86, 84, 84, 0.1);
+    border-radius: 15px;
+}
+.music-rec-section{
+    display: flex;
+    flex-direction: column;
+    align-items:safe;
+    margin-top: 50px;
+}
+
+.rec-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.rec-header-name{
+    font-size: 2rem;
+    color: white;
+}
+.rec-header a{
+    color: rgb(223, 220, 220);
+    text-decoration: none;
+}
+.rec-header a:hover{
+    text-decoration: underline;
+}
+
+.rec-card{
+    height: 300px;
+    background-color: transparent;
+    color: white;
+    overflow: hidden;
+    border: none;
+    text-overflow: ellipsis;
+}
+.rec-card img{
+    width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 15px;
+}
+
+.play-button-section{
+    position: absolute;
+    display: none;
+    background-color:#1db954;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-right: 9%;
+    padding-left: 10%;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    bottom: 45%;
+    right: 5%;
+}
+.play-button-recent{
+    position: absolute;
+    display: none;
+    background-color:#1db954;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-right: 5%;
+    padding-left: 6%;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    bottom: 20%;
+    right: 5%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Library sections */
+#library-arrow{
+    position: absolute;
+    right: -5%;
+    top: 160%;
+}
+#library-arrow:hover{
+    background-color: rgba(86, 84, 84, 0.9);
+}
+.library-playlists{
+    width: 100%;
+    height: 80%;
+    background-color: #212121;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin-top: 2%;
+    overflow: none;
+    border-radius: 3%;
+    position: relative;
+}
+.library-icons{
+    display: flex;
+    font-size: 1.3rem;
+    align-items: baseline;
+}
+.library-sections-list{
+    overflow-x: scroll;
+    overflow-y: none;
+    white-space: nowrap;
+    width: 100%;
+    height: 10%;
+    font-size: 0.8rem;
+    margin: 5px 0;
+}
+.library-section{
+    display: inline-block;
+    border-radius: 20px;
+    background-color: #535353;
+    color: white;
+    margin: 0 5px;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+.library-section:not(.active):hover {
+    background-color: rgba(98, 98, 98, 0.908);
+}
+
+.library-sections-list .library-section:first-child {
+    margin-left: 15px;
+}
+
+.library-sections-list::-webkit-scrollbar{
+    display: none;
+}
+.split-apart{
+    justify-content: space-between;
+}
+
+/* Playlists */
+.playlists{
+    width: 100%;
+    overflow-x: none;
+    overflow-y: scroll;
+}
+.playlist-item{
+    display: flex;
+    width: 100%;
+    height: 10vh;
+    cursor: pointer;
+    margin: 5px 0;
+    overflow-x: auto;
+    overflow-y: none;
+    padding: 10px;
+    position: relative;
+    transition: background-color 0.4s;
+}
+.playlist-item:hover{
+    background-color: rgb(211, 211, 211, 0.1);
+    border-radius: 10px;
+}
+.main-item:hover{
+    background-color: rgb(211, 211, 211, 0.5);
+}
+.playlist-item:hover .play-button-recent{
+    display: block;
+}
+.playlist-item img{
+    height: 100%;
+    border-radius: 8px;
+}
+.playlist-item p{
+    margin: 0px;
+    margin-left: 10px;
+}
+.pl-title{
+    color: white;
+    font-size: 1.1em;
+    overflow: none;
+    text-overflow: ellipsis; 
+}
+.pl-description{
+    font-size: 1rem;
+    color: rgb(211, 211, 211);
+}
+.playlist-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* figure out how to wrap white space or hide it when overflow */
+    /* need to fix this bug */
+}
+
+/* Main Content */
+.main-content{
+    width: 80vw;
+    height: 100vh;
+    overflow-x: none;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    background-color:  #212121;
+    border-radius: 1%;
+}
+.main-item{
+    background-color: rgba(179,179,179,0.1);
+    padding-right: 20px;
+    border-radius: 10px;
+    margin-bottom: 7px;
+    margin-right: 7px;
+}
+.nav-line{
+    width: 100%;
+    height: 15%;
+    font-size: 0.8rem;
+    margin: 5px 0;
+}
+.profile-line{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 6%;
+    margin: 10px 0px;
+}
+#recently-played{
+    margin-top: 20px;
+}
+
+/* General throughout Page */
+.active{
+    background-color: white;
+    color: black;
+}
+.bigger-hoverable{
+    font-size: 1rem;
+    transition: font-size 0.1s, color 0.1s;
+}
+.bigger-hoverable:hover{
+    color: white;
+    font-size: 1.01rem;
+}
+.dropdowns{
+    background-color: #535353;
+    color: white;
+}
+.dropdowns li:hover{
+    color: white;
+    background-color: rgba(179, 179, 179, 0.2);
+    cursor: pointer;
+}
+.dropdowns li a:hover{
+    background-color: transparent;
+}
+.gray-circle{
+    color: white;
+    background-color: rgb(90, 88, 88);
+    padding: 8px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    opacity: 0.85;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.4rem;
+    margin: 0 5px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center; 
+}
+.icon-name-set{
+    display: flex;
+    color: rgb(211, 211, 211);
+    align-items: baseline;
+    font-size: 1.3rem;
+    width: 100%;
+    padding: 10px 5px;
+}
+.icon-name-set i, .icon-name-set p{
+    margin: 0px;
+    margin-left: 20px;
+}
+.hoverable{
+    color: rgb(211, 211, 211);
+    transition: color 0.5s;
+}
+.hoverable:hover{
+    color: white;
+    cursor: pointer;
+}
