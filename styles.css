@@ -17,7 +17,7 @@ html, body{
 
 /* Sidebar */
 .sidebar{
-    min-width: 20vw;
+    width: 30vw;
     height: 100vh;
     overflow: none;
     display: flex;
@@ -259,7 +259,7 @@ html, body{
 
 /* Main Content */
 .main-content{
-    width: 80vw;
+    width: 70vw;
     height: 100vh;
     overflow-x: none;
     overflow-y: scroll;
